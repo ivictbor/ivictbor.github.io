@@ -3,7 +3,7 @@
   </head>
   <body>
     <script>
-      function requestSharing() {
+      async function requestSharing() {
         window.displayStream = await navigator.mediaDevices.getDisplayMedia({
           video: {
             frameRate: {
