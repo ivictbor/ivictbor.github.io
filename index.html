@@ -1,0 +1,23 @@
+<html>
+  <head>
+  </head>
+  <body>
+    <script>
+      function requestSharing() {
+        window.displayStream = await navigator.mediaDevices.getDisplayMedia({
+          video: {
+            frameRate: {
+              ideal: 20,
+              max: 24,
+            },
+          },
+        });
+        window.displayStream.oninactive = () => {
+          console.log('oninactive 😢')
+          requestSharing();
+        }
+      }
+      requestSharing();
+    </script>
+  </body>
+</html>
